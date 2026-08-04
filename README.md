@@ -1,3 +1,11 @@
+deployed locally on the hardhat blockchain
+upload images to the pinata which stores images in decentralized way 
+give access to any address
+
+
+
+
+
 # Sample Hardhat Project
 
 This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, and a script that deploys that contract.
