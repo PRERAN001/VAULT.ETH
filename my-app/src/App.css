@@ -1,0 +1,176 @@
+/* App.css */
+:root {
+  --primary-white: #ffffff;
+  --bg-light: #f4f7f6;
+  --text-dark: #333333;
+  --light-blue: #a3daff;
+  --light-blue-hover: #e0f3ff;
+  --orange: #ff7f50;
+  --orange-hover: #ff9f7a;
+  --danger: #ef4444;
+  --border-light: #e0e0e0;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-light);
+  color: var(--text-dark);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Navbar */
+.navbar {
+  background-color: var(--primary-white);
+  padding: 1rem 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--orange);
+}
+
+.account-tag {
+  background-color: var(--light-blue);
+  color: #004080;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+}
+
+/* Main Content */
+.main-content {
+  padding: 2rem 5%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.page-header h1 {
+  font-size: 2.2rem;
+}
+
+/* Buttons */
+.btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.2s ease;
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.btn-primary {
+  background-color: var(--light-blue);
+  color: #004080;
+}
+.btn-primary:hover { background-color: #c9e9ff; }
+
+.btn-orange {
+  background-color: var(--orange);
+  color: white;
+}
+.btn-orange:hover { background-color: var(--orange-hover); }
+
+.btn-danger {
+  background-color: var(--danger);
+  color: white;
+}
+.btn-danger:hover { background-color: #fca5a5; }
+
+.btn-sm { padding: 6px 12px; font-size: 0.85rem;}
+
+/* Cards */
+.card {
+  background-color: var(--primary-white);
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid var(--border-light);
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.card h2 { margin-bottom: 1.5rem; color: var(--text-dark); }
+
+/* Upload Card */
+.upload-card form { display: flex; flex-direction: column; gap: 1rem; }
+.file-input-wrapper { display: flex; align-items: center; gap: 1rem;}
+input[type="file"] { display: none; }
+.file-name { color: #666; font-size: 0.9rem;}
+
+/* Display Card */
+.search-bar { display: flex; gap: 10px; margin-bottom: 20px; }
+.search-bar input { flex-grow: 1; padding: 10px; border-radius: 6px; border: 1px solid var(--border-light); }
+
+.file-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.file-item {
+  aspect-ratio: 1;
+  background-color: #eee;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--border-light);
+  transition: transform 0.2s ease;
+}
+.file-item:hover { transform: scale(1.05); }
+
+.file-preview { width: 100%; height: 100%; object-fit: cover; }
+.no-data { grid-column: 1 / -1; text-align: center; color: #888; margin-top: 2rem;}
+
+/* Modal */
+.modal-backdrop {
+  position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  display: flex; align-items: center; justify-content: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  width: 90%; max-width: 500px;
+  max-height: 80vh; overflow-y: auto;
+}
+
+.modal-header {
+  display: flex; justify-content: space-between; align-items: center;
+  margin-bottom: 1.5rem;
+}
+.close-modal {
+  background: none; border: none; font-size: 2rem; color: #888; cursor: pointer;
+}
+
+.share-input-group { display: flex; gap: 10px; margin-bottom: 1.5rem;}
+.share-input-group input { flex-grow: 1; padding: 10px; border-radius: 6px; border: 1px solid var(--border-light); }
+
+.access-list { margin-top: 1rem; border: 1px solid var(--border-light); border-radius: 8px;}
+.access-item {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 10px 15px; border-bottom: 1px solid var(--border-light);
+}
+.access-item:last-child { border-bottom: none;}
+.user-address { font-family: monospace; color: #555; }
+.status-revoked { color: #888; font-style: italic;}
